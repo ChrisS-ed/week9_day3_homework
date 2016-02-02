@@ -59,7 +59,7 @@ window.onload = function(){
     localStorage.setItem('Last country', index)
 
     var blockquote = document.createElement('blockquote')
-    blockquote.innerText = (name + ' - ' + capital + ' - ' + population)
+    blockquote.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population)
 
     section.appendChild(blockquote)
   }
