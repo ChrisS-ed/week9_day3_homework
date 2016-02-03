@@ -49,6 +49,9 @@ window.onload = function(){
         var mapZoom = 6;
         var map = new Map(mapCentre, mapZoom);
         map.addMarker(mapCentre);
+
+        map.addInfoWindow(mapCentre, "<b>my window</b>");
+        
         displayCountry(countryIndex);
       }
     }

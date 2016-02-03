@@ -10,5 +10,14 @@ var Map = function(latLng, zm) {
       title: title
     });
     return marker;
+  },
+  this.addInfoWindow = function(latLng, title) {
+    var marker = this.addMarker(latLng, title);
+    marker.addListener('click', function() {
+      var infoWindow = new google.maps.InfoWindow({
+        content: this.title
+      });
+      infoWindow.open(this.map, marker);
+    });
   }
 }
