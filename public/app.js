@@ -50,9 +50,10 @@ window.onload = function(){
         var map = new Map(mapCentre, mapZoom);
         map.addMarker(mapCentre);
 
-        map.addInfoWindow(mapCentre, "<b>my window</b>");
+        // map.addInfoWindow(mapCentre, "<b>my window</b>");
         
-        displayCountry(countryIndex);
+        var content = displayCountry(countryIndex);
+        map.addInfoWindow(mapCentre, content);
       }
     }
   }
@@ -66,10 +67,13 @@ window.onload = function(){
 
     localStorage.setItem('Last country', index)
 
-    var blockquote = document.createElement('blockquote')
-    blockquote.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population)
+    // var blockquote = document.createElement('blockquote')
+    // blockquote.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population)
 
-    section.appendChild(blockquote)
+    // section.appendChild(blockquote)
+
+    var content = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population);
+    return content;
   }
 
   request.send(null);
