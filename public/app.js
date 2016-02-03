@@ -42,13 +42,13 @@ window.onload = function(){
       if(testCountryName === countryName){
         var countryIndex = index;
         console.log(countryIndex);
-        //var mapCentre = {lat: 40.712784, lng: -74.005941};
         var countryLat = countriesData[index]['latlng'][0];
         var countryLng = countriesData[index]['latlng'][1];
         var mapCentre = {lat: countryLat, lng: countryLng};
         console.log(mapCentre);
-        var mapZoom = 5;
+        var mapZoom = 6;
         var map = new Map(mapCentre, mapZoom);
+        map.addMarker(mapCentre);
         displayCountry(countryIndex);
       }
     }
