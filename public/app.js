@@ -49,8 +49,6 @@ window.onload = function(){
         var mapZoom = 6;
         var map = new Map(mapCentre, mapZoom);
         map.addMarker(mapCentre);
-
-        // map.addInfoWindow(mapCentre, "<b>my window</b>");
         
         var content = displayCountry(countryIndex);
         map.addInfoWindow(mapCentre, content);
@@ -66,11 +64,6 @@ window.onload = function(){
     console.log(name, capital, population);
 
     localStorage.setItem('Last country', index)
-
-    // var blockquote = document.createElement('blockquote')
-    // blockquote.innerText = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population)
-
-    // section.appendChild(blockquote)
 
     var content = ('Country: ' + name + ' - Capital: ' + capital + ' - Population: ' + population);
     return content;
