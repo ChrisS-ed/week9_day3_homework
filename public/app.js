@@ -3,23 +3,10 @@ window.onload = function(){
   var url = 'https://restcountries.eu/rest/v1';
   var request = new XMLHttpRequest();
   var countryNameList = [];
-  var dropdown = document.getElementById('Countrylist')
-  var section = document.getElementById('info')
+  var dropdown = document.getElementById('Countrylist');
+  var section = document.getElementById('countryinfo');
 
   request.open('GET', url);
-
-
-
-  var displayDropdown = function(countryNameList) {
-    for (var i = 0; i < countryNameList.length; i++) {
-      
-      var option = document.createElement("option");
-      option.innerText = countryNameList[i];
-
-      var select = document.querySelector("select");
-      select.appendChild(option);
-    };
-  }
 
   request.onload = function() {
     if (request.status === 200) {
@@ -35,6 +22,17 @@ window.onload = function(){
     }
   }
 
+  var displayDropdown = function(countryNameList) {
+    for (var i = 0; i < countryNameList.length; i++) {
+      
+      var option = document.createElement("option");
+      option.innerText = countryNameList[i];
+
+      var select = document.querySelector("select");
+      select.appendChild(option);
+    };
+  }
+
   dropdown.onchange = function(){
     var countryName = this.value;
     var countryIndex = null;
@@ -44,6 +42,13 @@ window.onload = function(){
       if(testCountryName === countryName){
         var countryIndex = index;
         console.log(countryIndex);
+        //var mapCentre = {lat: 40.712784, lng: -74.005941};
+        var countryLat = countriesData[index]['latlng'][0];
+        var countryLng = countriesData[index]['latlng'][1];
+        var mapCentre = {lat: countryLat, lng: countryLng};
+        console.log(mapCentre);
+        var mapZoom = 10;
+        var map = new Map(mapCentre, mapZoom);
         displayCountry(countryIndex);
       }
     }

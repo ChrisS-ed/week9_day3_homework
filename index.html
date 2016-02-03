@@ -4,6 +4,8 @@
     <title>Country Data Finder</title>
     <link type="text/css" rel="stylesheet" href="normalize.css" />
     <link rel='stylesheet' type='text/css' href='main.css'>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src='map.js'></script>
     <script src='app.js'></script>
   </head>
 
@@ -16,7 +18,12 @@
     <select style="width: 280px" id="Countrylist" name="Countrylist">
       <option selected="">Please Select</option>
     </select>
-    <section id = "info">
+
+    <div id = "map"></div>
+    <p id = "info" style = "display:none">Finding your location ... how exciting!</p>
+
+
+    <section id = "countryinfo">
     <!-- Javascript goes here -->
     </section>
 

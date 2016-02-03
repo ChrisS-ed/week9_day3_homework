@@ -1,8 +1,17 @@
+#map {
+  height: 250px;
+  width: 250px;
+  float: right;
+}
+
+#countryinfo {
+}
+
 header {
   background: orange;
 }
 
 body {
   background: wheat;
-  text-align: center;
+  display: inline;
 }
