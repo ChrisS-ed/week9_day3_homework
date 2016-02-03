@@ -47,7 +47,7 @@ window.onload = function(){
         var countryLng = countriesData[index]['latlng'][1];
         var mapCentre = {lat: countryLat, lng: countryLng};
         console.log(mapCentre);
-        var mapZoom = 10;
+        var mapZoom = 5;
         var map = new Map(mapCentre, mapZoom);
         displayCountry(countryIndex);
       }
